@@ -17,7 +17,7 @@ const asyncAction = {
 }
 ```
 
-dispatch an action with the async flag set to true. method should be a method that returns a promise. Before the service method provided is called an action will be passed with `/PENDING` appended to the end.
+Dispatch an action with the async flag set to true. method should be a method that returns a promise. Before the service method provided is called an action will be dispatched with `/PENDING` appended to the end.
 
 example: `HTTP/FETCH_SOMETHING/PENDING`
 
@@ -25,7 +25,8 @@ On success an action will be returned with the following format:
 
 ```js
 {
-    type: 'HTTP/FETCH_SOMETHING/SUCCESS', payload: result,
+    type: 'HTTP/FETCH_SOMETHING/SUCCESS',
+    payload: result,
     meta: action
 }
 ```
